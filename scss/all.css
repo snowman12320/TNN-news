@@ -18583,6 +18583,26 @@ h3, .h3 {
     margin: 0 2%;
   }
 }
+body {
+  position: relative;
+}
+body::after {
+  position: absolute;
+  content: "";
+  top: 112px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #dee2e6;
+}
+
+.navbar_top a {
+  color: #6c757d;
+}
+.navbar_top a:hover {
+  color: black;
+}
+
 .navbar-nav a {
   font-weight: normal;
   color: black;
@@ -18590,22 +18610,45 @@ h3, .h3 {
 }
 .navbar-nav a:hover {
   color: orange;
-  border-bottom: 1px solid black;
 }
-.navbar-nav a::after {
-  position: absolute;
-  content: "";
-  bottom: 7px;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background-color: #dee2e6;
-}
-.navbar-nav .active {
-  border-bottom: 1px solid black;
-}
-.navbar-nav .active a {
+.navbar-nav a a {
   color: orange;
+}
+
+.hvr-underline-from-left {
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background: #000;
+  height: 2px;
+  transition-property: right;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+
+.hvr-underline-from-left:hover:before,
+.hvr-underline-from-left:focus:before,
+.hvr-underline-from-left:active:before {
+  right: 0;
+}
+
+.navbar_min a {
+  font-size: 16px;
+  color: #343a40;
+}
+.navbar_min a:hover {
+  text-decoration: underline !important;
 }
 
 * {
